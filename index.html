@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Joon & Bomm</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      font-family:Arial, Helvetica, sans-serif;
+      background:#faf8f5;
+      color:white;
+    }
+
+    .hero{
+      height:100vh;
+      background:url("https://images.unsplash.com/photo-1519741497674-611481863552?w=1600&auto=format&fit=crop") center center/cover;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      position:relative;
+    }
+
+    .overlay{
+      position:absolute;
+      inset:0;
+      background:rgba(0,0,0,.35);
+    }
+
+    .content{
+      position:relative;
+      z-index:2;
+    }
+
+    h1{
+      font-size:64px;
+      letter-spacing:8px;
+    }
+
+    h2{
+      margin-top:20px;
+      font-weight:300;
+    }
+
+    button{
+      margin-top:40px;
+      padding:15px 40px;
+      border:none;
+      border-radius:40px;
+      background:white;
+      color:#333;
+      font-size:18px;
+      cursor:pointer;
+    }
+
+    button:hover{
+      transform:scale(1.05);
+    }
+  </style>
+
+</head>
+
+<body>
+
+<section class="hero">
+
+<div class="overlay"></div>
+
+<div class="content">
+
+<h1>JOON & BOMM</h1>
+
+<h2>14 November 2026</h2>
+
+<button>Begin Our Story</button>
+
+</div>
+
+</section>
+
+</body>
+
+</html>
