@@ -1,90 +1,337 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Joon & Bomm</title>
 
-  <style>
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-    }
+<meta charset="UTF-8">
 
-    body{
-      font-family:Arial, Helvetica, sans-serif;
-      background:#faf8f5;
-      color:white;
-    }
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    .hero{
-      height:100vh;
-      background:url("https://images.unsplash.com/photo-1519741497674-611481863552?w=1600&auto=format&fit=crop") center center/cover;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      text-align:center;
-      position:relative;
-    }
+<title>Joon & Bomm</title>
 
-    .overlay{
-      position:absolute;
-      inset:0;
-      background:rgba(0,0,0,.35);
-    }
+<link rel="preconnect" href="https://fonts.googleapis.com">
 
-    .content{
-      position:relative;
-      z-index:2;
-    }
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    h1{
-      font-size:64px;
-      letter-spacing:8px;
-    }
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Manrope:wght@300;400;500;700&display=swap" rel="stylesheet">
 
-    h2{
-      margin-top:20px;
-      font-weight:300;
-    }
+<style>
 
-    button{
-      margin-top:40px;
-      padding:15px 40px;
-      border:none;
-      border-radius:40px;
-      background:white;
-      color:#333;
-      font-size:18px;
-      cursor:pointer;
-    }
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
 
-    button:hover{
-      transform:scale(1.05);
-    }
-  </style>
+html{
+scroll-behavior:smooth;
+}
+
+body{
+
+background:#111;
+
+font-family:'Manrope',sans-serif;
+
+color:white;
+
+overflow-x:hidden;
+
+}
+
+.hero{
+
+height:100vh;
+
+position:relative;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+text-align:center;
+
+background:url("hero.jpg");
+
+background-size:cover;
+
+background-position:center;
+
+}
+
+.hero::before{
+
+content:"";
+
+position:absolute;
+
+inset:0;
+
+background:rgba(0,0,0,.45);
+
+backdrop-filter:blur(1px);
+
+}
+
+.content{
+
+position:relative;
+
+z-index:2;
+
+width:100%;
+
+padding:40px;
+
+}
+
+h1{
+
+font-family:'Cormorant Garamond',serif;
+
+font-size:74px;
+
+letter-spacing:8px;
+
+font-weight:500;
+
+}
+
+.date{
+
+margin-top:18px;
+
+font-size:20px;
+
+letter-spacing:4px;
+
+}
+.button{
+
+display:inline-block;
+
+margin-top:50px;
+
+padding:16px 42px;
+
+border:1px solid rgba(255,255,255,.35);
+
+border-radius:50px;
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(12px);
+
+color:white;
+
+text-decoration:none;
+
+font-size:15px;
+
+letter-spacing:2px;
+
+transition:.35s;
+
+}
+
+.button:hover{
+
+background:white;
+
+color:#111;
+
+transform:translateY(-3px);
+
+}
+
+.arrow{
+
+margin-top:55px;
+
+font-size:34px;
+
+animation:float 2s infinite;
+
+opacity:.8;
+
+}
+
+@keyframes float{
+
+0%,100%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(10px);
+
+}
+
+}
+
+.fade{
+
+opacity:0;
+
+transform:translateY(35px);
+
+animation:fadeUp 1.3s ease forwards;
+
+}
+
+.fade:nth-child(1){
+
+animation-delay:.2s;
+
+}
+
+.fade:nth-child(2){
+
+animation-delay:.5s;
+
+}
+
+.fade:nth-child(3){
+
+animation-delay:.8s;
+
+}
+
+.fade:nth-child(4){
+
+animation-delay:1.1s;
+
+}
+
+@keyframes fadeUp{
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+.section{
+
+padding:100px 24px;
+
+text-align:center;
+
+background:#111;
+
+}
+
+.section h2{
+
+font-family:'Cormorant Garamond',serif;
+
+font-size:54px;
+
+margin-bottom:20px;
+
+font-weight:500;
+
+letter-spacing:2px;
+
+}
+
+.section p{
+
+max-width:680px;
+
+margin:auto;
+
+line-height:1.9;
+
+color:#d0d0d0;
+
+font-size:18px;
+
+}
+
+@media(max-width:768px){
+
+h1{
+
+font-size:48px;
+
+letter-spacing:4px;
+
+}
+
+.date{
+
+font-size:16px;
+
+letter-spacing:2px;
+
+}
+
+.section h2{
+
+font-size:40px;
+
+}
+
+}
+
+</style>
 
 </head>
 
 <body>
-
+<body>
 <section class="hero">
 
-<div class="overlay"></div>
+  <div class="content">
 
-<div class="content">
+    <h1 class="fade">
+      JOON<br>
+      &<br>
+      BOMM
+    </h1>
 
-<h1>JOON & BOMM</h1>
+    <p class="date fade">
+      14 November 2026
+    </p>
 
-<h2>14 November 2026</h2>
+    <a href="#welcome" class="button fade">
+      Begin Our Story
+    </a>
 
-<button>Begin Our Story</button>
+    <div class="arrow fade">
+      ↓
+    </div>
 
-</div>
+  </div>
 
 </section>
 
-</body>
+<section id="welcome" class="section">
 
-</html>
+  <h2>Welcome</h2>
+
+  <p>
+
+    We are delighted to invite you to celebrate
+    one of the most meaningful days of our lives.
+
+    <br><br>
+
+    Your presence, love and blessings
+    will make our wedding day truly unforgettable.
+
+  </p>
+
+</section>  
+</body>
+</html>  
