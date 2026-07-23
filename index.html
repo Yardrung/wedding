@@ -471,3 +471,192 @@ Begin Our Journey
 </div>
 
 </section>   
+<section id="countdown" class="countdown-section">
+
+<div class="container">
+
+<h2 class="section-title">
+
+COUNTDOWN
+
+</h2>
+
+<div class="countdown-grid">
+
+<div class="count-item">
+
+<div id="days" class="count-number">
+
+000
+
+</div>
+
+<div class="count-label">
+
+Days
+
+</div>
+
+</div>
+
+<div class="count-item">
+
+<div id="hours" class="count-number">
+
+00
+
+</div>
+
+<div class="count-label">
+
+Hours
+
+</div>
+
+</div>
+
+<div class="count-item">
+
+<div id="minutes" class="count-number">
+
+00
+
+</div>
+
+<div class="count-label">
+
+Minutes
+
+</div>
+
+</div>
+
+<div class="count-item">
+
+<div id="seconds" class="count-number">
+
+00
+
+</div>
+
+<div class="count-label">
+
+Seconds
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<style>
+
+/* ===========================
+COUNTDOWN
+=========================== */
+
+.countdown-section{
+
+padding:110px 24px;
+
+background:#ffffff;
+
+text-align:center;
+
+}
+
+.section-title{
+
+font-size:.95rem;
+
+letter-spacing:.45em;
+
+font-weight:600;
+
+margin-bottom:60px;
+
+color:#111;
+
+}
+
+.countdown-grid{
+
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+gap:24px;
+
+max-width:900px;
+
+margin:0 auto;
+
+}
+
+.count-item{
+
+opacity:0;
+
+transform:translateY(28px);
+
+transition:all .8s ease;
+
+}
+
+.count-item.show{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+.count-number{
+
+font-family:"Cormorant Garamond",serif;
+
+font-size:clamp(3.2rem,7vw,5.2rem);
+
+line-height:1;
+
+color:#111;
+
+}
+
+.count-label{
+
+margin-top:14px;
+
+font-size:.9rem;
+
+letter-spacing:.18em;
+
+text-transform:uppercase;
+
+color:#777;
+
+}
+
+@media(max-width:768px){
+
+.countdown-grid{
+
+grid-template-columns:repeat(2,1fr);
+
+gap:34px 20px;
+
+}
+
+.section-title{
+
+margin-bottom:46px;
+
+}
+
+}
+
+</style>
