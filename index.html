@@ -410,6 +410,113 @@ color:#111;
 transform:translateY(-2px);
 
 }
+<style>
+
+/* ===========================
+COUNTDOWN
+=========================== */
+
+.countdown-section{
+
+padding:110px 24px;
+
+background:#ffffff;
+
+text-align:center;
+
+}
+
+.section-title{
+
+font-size:.95rem;
+
+letter-spacing:.45em;
+
+font-weight:600;
+
+margin-bottom:60px;
+
+color:#111;
+
+}
+
+.countdown-grid{
+
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+gap:24px;
+
+max-width:900px;
+
+margin:0 auto;
+
+}
+
+.count-item{
+
+opacity:0;
+
+transform:translateY(28px);
+
+transition:all .8s ease;
+
+}
+
+.count-item.show{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+.count-number{
+
+font-family:"Cormorant Garamond",serif;
+
+font-size:clamp(3.2rem,7vw,5.2rem);
+
+line-height:1;
+
+color:#111;
+
+}
+
+.count-label{
+
+margin-top:14px;
+
+font-size:.9rem;
+
+letter-spacing:.18em;
+
+text-transform:uppercase;
+
+color:#777;
+
+}
+
+@media(max-width:768px){
+
+.countdown-grid{
+
+grid-template-columns:repeat(2,1fr);
+
+gap:34px 20px;
+
+}
+
+.section-title{
+
+margin-bottom:46px;
+
+}
+
+}
+
+</style>
 
 </style>
 
@@ -552,111 +659,82 @@ Seconds
 </div>
 
 </section>
+<script>
 
-<style>
+document.documentElement.style.scrollBehavior="smooth";
 
-/* ===========================
-COUNTDOWN
-=========================== */
+const weddingDate=new Date(2026,10,14,15,9,0);
 
-.countdown-section{
+const daysEl=document.getElementById("days");
+const hoursEl=document.getElementById("hours");
+const minutesEl=document.getElementById("minutes");
+const secondsEl=document.getElementById("seconds");
 
-padding:110px 24px;
+function updateCountdown(){
 
-background:#ffffff;
+const now=new Date();
 
-text-align:center;
+const diff=weddingDate-now;
 
-}
+if(diff<=0){
 
-.section-title{
+daysEl.textContent="000";
+hoursEl.textContent="00";
+minutesEl.textContent="00";
+secondsEl.textContent="00";
 
-font-size:.95rem;
-
-letter-spacing:.45em;
-
-font-weight:600;
-
-margin-bottom:60px;
-
-color:#111;
+return;
 
 }
 
-.countdown-grid{
+const days=Math.floor(diff/86400000);
 
-display:grid;
+const hours=Math.floor((diff%86400000)/3600000);
 
-grid-template-columns:repeat(4,1fr);
+const minutes=Math.floor((diff%3600000)/60000);
 
-gap:24px;
+const seconds=Math.floor((diff%60000)/1000);
 
-max-width:900px;
-
-margin:0 auto;
-
-}
-
-.count-item{
-
-opacity:0;
-
-transform:translateY(28px);
-
-transition:all .8s ease;
+daysEl.textContent=String(days).padStart(3,"0");
+hoursEl.textContent=String(hours).padStart(2,"0");
+minutesEl.textContent=String(minutes).padStart(2,"0");
+secondsEl.textContent=String(seconds).padStart(2,"0");
 
 }
 
-.count-item.show{
+updateCountdown();
 
-opacity:1;
+setInterval(updateCountdown,1000);
 
-transform:translateY(0);
+const section=document.querySelector(".countdown-section");
 
-}
+const observer=new IntersectionObserver((entries)=>{
 
-.count-number{
+entries.forEach(entry=>{
 
-font-family:"Cormorant Garamond",serif;
+if(entry.isIntersecting){
 
-font-size:clamp(3.2rem,7vw,5.2rem);
+document.querySelectorAll(".count-item").forEach((item,index)=>{
 
-line-height:1;
+setTimeout(()=>{
 
-color:#111;
+item.classList.add("show");
 
-}
+},index*150);
 
-.count-label{
+});
 
-margin-top:14px;
-
-font-size:.9rem;
-
-letter-spacing:.18em;
-
-text-transform:uppercase;
-
-color:#777;
+observer.disconnect();
 
 }
 
-@media(max-width:768px){
+});
 
-.countdown-grid{
+},{threshold:.25});
 
-grid-template-columns:repeat(2,1fr);
+observer.observe(section);
 
-gap:34px 20px;
+</script>
 
-}
-
-.section-title{
-
-margin-bottom:46px;
-
-}
-
-}
-
-</style>
+</body>
+</html>
