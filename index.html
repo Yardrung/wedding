@@ -514,8 +514,124 @@ margin-bottom:46px;
 }
 
 }
+/* ===========================
+WEDDING CEREMONY
+=========================== */
 
-</style>
+.info-section{
+
+padding:110px 24px;
+
+background:#fff;
+
+}
+
+.ceremony-card{
+
+max-width:720px;
+
+margin:0 auto;
+
+text-align:center;
+
+}
+
+.ceremony-date{
+
+font-family:"Cormorant Garamond",serif;
+
+font-size:2rem;
+
+line-height:1.6;
+
+color:#111;
+
+margin-bottom:60px;
+
+}
+
+.timeline{
+
+display:flex;
+
+justify-content:center;
+
+align-items:flex-start;
+
+gap:50px;
+
+flex-wrap:wrap;
+
+}
+
+.timeline-item{
+
+flex:1;
+
+min-width:220px;
+
+}
+
+.timeline-item h3{
+
+font-size:1.3rem;
+
+letter-spacing:.08em;
+
+margin-bottom:18px;
+
+color:#111;
+
+}
+
+.timeline-item p{
+
+line-height:2;
+
+color:#555;
+
+}
+
+.timeline-divider{
+
+width:1px;
+
+background:#e5e5e5;
+
+min-height:150px;
+
+}
+
+@media(max-width:768px){
+
+.timeline{
+
+flex-direction:column;
+
+gap:40px;
+
+}
+
+.timeline-divider{
+
+width:70px;
+
+height:1px;
+
+min-height:1px;
+
+margin:0 auto;
+
+}
+
+.ceremony-date{
+
+font-size:1.7rem;
+
+}
+
+}
+
 
 </style>
 
@@ -734,6 +850,82 @@ observer.disconnect();
 observer.observe(section);
 
 </script>
+<section class="info-section">
 
+<div class="container">
+
+<h2 class="section-title">
+
+WEDDING CEREMONY
+
+</h2>
+
+<div class="ceremony-card">
+
+<p class="ceremony-date">
+
+14 พฤศจิกายน 2569
+
+<br>
+
+Saturday, 14 November 2026
+
+</p>
+
+<div class="timeline">
+
+<div class="timeline-item">
+
+<h3>
+
+15:09 – 17:00
+
+</h3>
+
+<p>
+
+แห่ขันหมาก
+
+<br>
+
+พิธีหมั้น
+
+<br>
+
+รดน้ำสังข์
+
+</p>
+
+</div>
+
+<div class="timeline-divider"></div>
+
+<div class="timeline-item">
+
+<h3>
+
+18:00 – 22:00
+
+</h3>
+
+<p>
+
+งานเลี้ยงฉลองมงคลสมรส
+
+<br>
+
+Wedding Celebration
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
 </body>
 </html>
