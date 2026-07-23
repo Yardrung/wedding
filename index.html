@@ -716,6 +716,50 @@ transform:translateY(-2px);
 transform:scale(.98);
 
 }
+/* ---------- DRESS CODE ---------- */
+
+.dress-section{
+
+    padding:110px 24px;
+    text-align:center;
+    background:#fff;
+
+}
+
+.dress-palette{
+
+    display:grid;
+    grid-template-columns:repeat(6,42px);
+    justify-content:center;
+    gap:18px;
+    margin-top:42px;
+
+}
+
+.color-dot{
+
+    width:42px;
+    height:42px;
+    border-radius:50%;
+    box-shadow:0 4px 12px rgba(0,0,0,.08);
+
+}
+
+/* Pastel Colors */
+
+.blush{background:#F7D6DD;}
+.peach{background:#F8DEC8;}
+.butter{background:#F8EDB5;}
+.sage{background:#DCE8D2;}
+.mint{background:#D9EEE4;}
+.sky{background:#D9EAF7;}
+
+.lavender{background:#E5DCF7;}
+.lilac{background:#EEDCF5;}
+.cream{background:#F7F2EA;}
+.nude{background:#E7D5C6;}
+.coral{background:#F4CFC7;}
+.dusty{background:#C8D7E8;}    
 @media(max-width:768px){
 
 .timeline{
@@ -745,7 +789,13 @@ font-size:1.45rem;
 line-height:1.7;
 
 }
+.dress-palette{
 
+    grid-template-columns:repeat(4,42px);
+
+    gap:16px;
+
+}
 }
 
 
