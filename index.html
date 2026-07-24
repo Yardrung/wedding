@@ -882,15 +882,25 @@ transform:scale(.98);
 
 }
 
+.closing-photo{
+    overflow:hidden;
+}
+
 .closing-photo img{
-
     width:100%;
-
     display:block;
-
     object-fit:cover;
 
-} 
+    transform:scale(1);
+
+    transition:
+        opacity 1.2s ease,
+        transform 6s ease;
+}
+
+.closing-photo.show img{
+    transform:scale(1.03);
+}
 /* ---------- THANK YOU ---------- */
 
 .thankyou-section{
@@ -1378,9 +1388,8 @@ Seconds
     </h2>
 
     <p class="thankyou-text">
-        We can't wait to celebrate<br>
-        our special day with you.
-    </p>
+    We can't wait to celebrate with you.
+</p>
 
     <div class="thankyou-date">
         14 November 2026
