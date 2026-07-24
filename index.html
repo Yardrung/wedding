@@ -963,6 +963,29 @@ transform:scale(.98);
 
     letter-spacing:.05em;
 
+}
+/* ---------- GLOBAL FADE ANIMATION ---------- */
+
+.fade-up{
+
+    opacity:0;
+
+    transform:translateY(28px);
+
+    transition:
+        opacity .8s ease,
+        transform .8s ease;
+
+    will-change:opacity,transform;
+
+}
+
+.fade-up.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
 }    
 @media(max-width:768px){
 
@@ -1088,7 +1111,7 @@ Begin Our Journey
 </div>
 
 </section>   
-<section id="countdown" class="countdown-section">
+<section id="countdown" class="countdown-section fade-up">
 
 <div class="container">
 
@@ -1169,7 +1192,7 @@ Seconds
 </div>
 
 </section>
-<section class="info-section">
+<section class="info-section fade-up">
 
     <div class="container">
 
@@ -1234,7 +1257,7 @@ Seconds
     </div>
 
 </section>  
-<section class="location-section">
+<section class="location-section fade-up">
 
     <div class="container">
 
@@ -1442,7 +1465,27 @@ observer.disconnect();
 },{threshold:.25});
 
 observer.observe(section);
+const fadeObserver = new IntersectionObserver((entries)=>{
 
+    entries.forEach(entry=>{
+
+        if(entry.isIntersecting){
+
+            entry.target.classList.add("show");
+
+        }
+
+    });
+
+},{
+    threshold:.15
+});
+
+document.querySelectorAll(".fade-up").forEach(item=>{
+
+    fadeObserver.observe(item);
+
+});
 </script>
 
 
