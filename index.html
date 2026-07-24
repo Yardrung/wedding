@@ -1465,21 +1465,25 @@ observer.disconnect();
 },{threshold:.25});
 
 observer.observe(section);
+let fadeDelay = 0;
+
 const fadeObserver = new IntersectionObserver((entries)=>{
 
-    entries.forEach((entry,index)=>{
+    entries.forEach((entry)=>{
 
-    if(entry.isIntersecting){
+        if(entry.isIntersecting && !entry.target.classList.contains("show")){
 
-        setTimeout(()=>{
+            setTimeout(()=>{
 
-            entry.target.classList.add("show");
+                entry.target.classList.add("show");
 
-        },index*180);
+            },fadeDelay);
 
-    }
+            fadeDelay += 180;
 
-});
+        }
+
+    });
 
 },{
     threshold:.15
