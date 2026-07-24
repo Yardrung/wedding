@@ -528,11 +528,22 @@ background:#fff;
 
 .ceremony-card{
 
-max-width:720px;
+    max-width:760px;
 
-margin:0 auto;
+    margin:0 auto;
 
-text-align:center;
+    padding:64px 48px;
+
+    border:1px solid #efefef;
+
+    border-radius:28px;
+
+    background:#fff;
+
+    box-shadow:
+        0 12px 40px rgba(0,0,0,.04);
+
+    text-align:center;
 
 }
 
@@ -562,10 +573,10 @@ justify-content:center;
 
 align-items:flex-start;
 
-gap:50px;
+gap:72px;
 
 flex-wrap:wrap;
-
+margin-top:8px;
 }
 
 .timeline-item{
@@ -593,13 +604,30 @@ margin-top:22px;
 margin-bottom:24px;
 
 }
+.timeline-item h4{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:1.25rem;
+
+    font-weight:500;
+
+    letter-spacing:.08em;
+
+    text-transform:uppercase;
+
+    color:#7b6a52;
+
+    margin:0 0 18px;
+
+}    
 .ceremony-icon{
 
-font-size:1.5rem;
+font-size:1.8rem;
 
 line-height:1;
 
-margin-bottom:16px;
+margin-bottom:22px;
 
 opacity:.9;
 
@@ -608,11 +636,11 @@ opacity:.9;
 
 font-family:Inter,sans-serif;
 
-font-size:1.02rem;
+font-size:1rem;
 
 font-weight:400;
 
-line-height:2.15;
+line-height:2.25;
 
 color:#666;
 
@@ -622,11 +650,16 @@ margin:0;
 
 .timeline-divider{
 
-width:1px;
+    width:1px;
 
-background:#e5e5e5;
+    background:linear-gradient(
+        to bottom,
+        transparent,
+        #e5e5e5,
+        transparent
+    );
 
-min-height:150px;
+    min-height:180px;
 
 }
 /* ---------- LOCATION ---------- */
@@ -1227,9 +1260,9 @@ Seconds
         <div class="ceremony-card">
 
             <p class="ceremony-date">
-                14 พฤศจิกายน 2569
-                <br>
                 Saturday, 14 November 2026
+                <br>
+                14 พฤศจิกายน 2569
             </p>
 
             <div class="timeline">
@@ -1242,7 +1275,8 @@ Seconds
 
 </div>
 
-<h3>15:09 – 17:00</h3>
+<h3>15:09 – 17:00</h3
+<h4>Engagement Ceremony</h4>                     
 
                     <p>
                         แห่ขันหมาก
@@ -1265,11 +1299,10 @@ Seconds
 </div>
 
 <h3>18:00 – 22:00</h3>
-
+<h4>Wedding Celebration</h4>
                     <p>
                         งานเลี้ยงฉลองมงคลสมรส
-                        <br>
-                        Wedding Celebration
+
                     </p>
 
                 </div>
