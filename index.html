@@ -1467,15 +1467,19 @@ observer.disconnect();
 observer.observe(section);
 const fadeObserver = new IntersectionObserver((entries)=>{
 
-    entries.forEach(entry=>{
+    entries.forEach((entry,index)=>{
 
-        if(entry.isIntersecting){
+    if(entry.isIntersecting){
+
+        setTimeout(()=>{
 
             entry.target.classList.add("show");
 
-        }
+        },index*180);
 
-    });
+    }
+
+});
 
 },{
     threshold:.15
